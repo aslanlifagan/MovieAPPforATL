@@ -23,6 +23,7 @@
 		4055AA842B8CEB1F00DB04D4 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4055AA7D2B8CEB1F00DB04D4 /* NetworkManager.swift */; };
 		4055AA852B8CEB1F00DB04D4 /* MovieHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4055AA7F2B8CEB1F00DB04D4 /* MovieHelper.swift */; };
 		4055AA862B8CEB1F00DB04D4 /* MovieManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4055AA802B8CEB1F00DB04D4 /* MovieManager.swift */; };
+		4055AA882B8CF26800DB04D4 /* PopularMovieModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4055AA872B8CF26800DB04D4 /* PopularMovieModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +45,7 @@
 		4055AA7D2B8CEB1F00DB04D4 /* NetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		4055AA7F2B8CEB1F00DB04D4 /* MovieHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieHelper.swift; sourceTree = "<group>"; };
 		4055AA802B8CEB1F00DB04D4 /* MovieManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieManager.swift; sourceTree = "<group>"; };
+		4055AA872B8CF26800DB04D4 /* PopularMovieModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularMovieModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +94,7 @@
 		4055AA632B8CE80400DB04D4 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				4055AA872B8CF26800DB04D4 /* PopularMovieModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -264,6 +267,7 @@
 				4055AA6B2B8CE88700DB04D4 /* HomeController.swift in Sources */,
 				4055AA832B8CEB1F00DB04D4 /* NetworkHelper.swift in Sources */,
 				4055AA4C2B8CE33A00DB04D4 /* AppDelegate.swift in Sources */,
+				4055AA882B8CF26800DB04D4 /* PopularMovieModel.swift in Sources */,
 				4055AA852B8CEB1F00DB04D4 /* MovieHelper.swift in Sources */,
 				4055AA4E2B8CE33A00DB04D4 /* SceneDelegate.swift in Sources */,
 				4055AA692B8CE87100DB04D4 /* HomeViewModel.swift in Sources */,

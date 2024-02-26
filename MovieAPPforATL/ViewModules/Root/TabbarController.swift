@@ -11,7 +11,6 @@ class TabbarController: UITabBarController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        #warning("Detail ekraninda ARC example goster!")
     }
 }

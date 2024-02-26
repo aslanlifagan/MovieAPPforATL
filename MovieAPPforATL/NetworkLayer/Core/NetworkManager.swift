@@ -34,12 +34,12 @@ class NetworkManager {
             print("header: \(header)")
             
             let dataTask = session.dataTask(with: request) { [weak self] data, response, error in
-                let statusCode = (response as! HTTPURLResponse).statusCode
-                print("responseCode: \(statusCode)")
-                if statusCode == 401 {
-                    completion(.failure(.authError))
-                    return
-                }
+//                let statusCode = (response as! HTTPURLResponse).statusCode
+//                print("responseCode: \(statusCode)")
+//                if statusCode == 401 {
+//                    completion(.failure(.authError))
+//                    return
+//                }
                 
                 guard let self = self else {return}
                 if let _ = error {

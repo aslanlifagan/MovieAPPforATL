@@ -7,7 +7,7 @@
 
 import Foundation
 enum MovieHelper: String {
-    case popular = "movie/popular?language=en-US&page=1"
+    case popular = "movie/popular?language=en-US&page="
 
     var path: String {
         return NetworkHelper.shared.requestURL(url: self.rawValue)
