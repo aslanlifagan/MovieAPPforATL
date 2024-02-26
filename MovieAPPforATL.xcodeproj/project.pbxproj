@@ -13,6 +13,12 @@
 		4055AA582B8CE33D00DB04D4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4055AA562B8CE33D00DB04D4 /* LaunchScreen.storyboard */; };
 		4055AA602B8CE3EB00DB04D4 /* TabbarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4055AA5F2B8CE3EB00DB04D4 /* TabbarController.swift */; };
 		4055AA622B8CE4E200DB04D4 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4055AA612B8CE4E200DB04D4 /* Home.storyboard */; };
+		4055AA692B8CE87100DB04D4 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4055AA682B8CE87100DB04D4 /* HomeViewModel.swift */; };
+		4055AA6B2B8CE88700DB04D4 /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4055AA6A2B8CE88700DB04D4 /* HomeController.swift */; };
+		4055AA6E2B8CE8D300DB04D4 /* FavoriteController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4055AA6D2B8CE8D300DB04D4 /* FavoriteController.swift */; };
+		4055AA702B8CE8E400DB04D4 /* FavoriteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4055AA6F2B8CE8E400DB04D4 /* FavoriteViewModel.swift */; };
+		4055AA732B8CE91000DB04D4 /* MoreController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4055AA722B8CE91000DB04D4 /* MoreController.swift */; };
+		4055AA752B8CE91F00DB04D4 /* MoreViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4055AA742B8CE91F00DB04D4 /* MoreViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +30,12 @@
 		4055AA592B8CE33D00DB04D4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4055AA5F2B8CE3EB00DB04D4 /* TabbarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbarController.swift; sourceTree = "<group>"; };
 		4055AA612B8CE4E200DB04D4 /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
+		4055AA682B8CE87100DB04D4 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		4055AA6A2B8CE88700DB04D4 /* HomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
+		4055AA6D2B8CE8D300DB04D4 /* FavoriteController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteController.swift; sourceTree = "<group>"; };
+		4055AA6F2B8CE8E400DB04D4 /* FavoriteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteViewModel.swift; sourceTree = "<group>"; };
+		4055AA722B8CE91000DB04D4 /* MoreController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreController.swift; sourceTree = "<group>"; };
+		4055AA742B8CE91F00DB04D4 /* MoreViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,13 +70,83 @@
 			children = (
 				4055AA4B2B8CE33A00DB04D4 /* AppDelegate.swift */,
 				4055AA4D2B8CE33A00DB04D4 /* SceneDelegate.swift */,
-				4055AA5F2B8CE3EB00DB04D4 /* TabbarController.swift */,
-				4055AA612B8CE4E200DB04D4 /* Home.storyboard */,
+				4055AA632B8CE80400DB04D4 /* Models */,
+				4055AA642B8CE80A00DB04D4 /* Views */,
+				4055AA652B8CE81300DB04D4 /* ViewModules */,
 				4055AA542B8CE33D00DB04D4 /* Assets.xcassets */,
 				4055AA562B8CE33D00DB04D4 /* LaunchScreen.storyboard */,
 				4055AA592B8CE33D00DB04D4 /* Info.plist */,
 			);
 			path = MovieAPPforATL;
+			sourceTree = "<group>";
+		};
+		4055AA632B8CE80400DB04D4 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		4055AA642B8CE80A00DB04D4 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				4055AA762B8CE93900DB04D4 /* Storyboards */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		4055AA652B8CE81300DB04D4 /* ViewModules */ = {
+			isa = PBXGroup;
+			children = (
+				4055AA662B8CE84700DB04D4 /* Root */,
+				4055AA6C2B8CE8B000DB04D4 /* Favorite */,
+				4055AA672B8CE85100DB04D4 /* Home */,
+				4055AA712B8CE8F200DB04D4 /* More */,
+			);
+			path = ViewModules;
+			sourceTree = "<group>";
+		};
+		4055AA662B8CE84700DB04D4 /* Root */ = {
+			isa = PBXGroup;
+			children = (
+				4055AA5F2B8CE3EB00DB04D4 /* TabbarController.swift */,
+			);
+			path = Root;
+			sourceTree = "<group>";
+		};
+		4055AA672B8CE85100DB04D4 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				4055AA682B8CE87100DB04D4 /* HomeViewModel.swift */,
+				4055AA6A2B8CE88700DB04D4 /* HomeController.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		4055AA6C2B8CE8B000DB04D4 /* Favorite */ = {
+			isa = PBXGroup;
+			children = (
+				4055AA6D2B8CE8D300DB04D4 /* FavoriteController.swift */,
+				4055AA6F2B8CE8E400DB04D4 /* FavoriteViewModel.swift */,
+			);
+			path = Favorite;
+			sourceTree = "<group>";
+		};
+		4055AA712B8CE8F200DB04D4 /* More */ = {
+			isa = PBXGroup;
+			children = (
+				4055AA722B8CE91000DB04D4 /* MoreController.swift */,
+				4055AA742B8CE91F00DB04D4 /* MoreViewModel.swift */,
+			);
+			path = More;
+			sourceTree = "<group>";
+		};
+		4055AA762B8CE93900DB04D4 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				4055AA612B8CE4E200DB04D4 /* Home.storyboard */,
+			);
+			path = Storyboards;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,9 +220,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4055AA752B8CE91F00DB04D4 /* MoreViewModel.swift in Sources */,
 				4055AA602B8CE3EB00DB04D4 /* TabbarController.swift in Sources */,
+				4055AA6E2B8CE8D300DB04D4 /* FavoriteController.swift in Sources */,
+				4055AA6B2B8CE88700DB04D4 /* HomeController.swift in Sources */,
 				4055AA4C2B8CE33A00DB04D4 /* AppDelegate.swift in Sources */,
 				4055AA4E2B8CE33A00DB04D4 /* SceneDelegate.swift in Sources */,
+				4055AA692B8CE87100DB04D4 /* HomeViewModel.swift in Sources */,
+				4055AA732B8CE91000DB04D4 /* MoreController.swift in Sources */,
+				4055AA702B8CE8E400DB04D4 /* FavoriteViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

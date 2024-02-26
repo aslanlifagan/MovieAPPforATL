@@ -11,14 +11,29 @@
         <!--Home-->
         <scene sceneID="2Wi-GW-NA3">
             <objects>
-                <viewController useStoryboardIdentifierAsRestorationIdentifier="YES" id="BRs-LR-8gi" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HomeController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BRs-LR-8gi" customClass="HomeController" customModule="MovieAPPforATL" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="guR-PW-bpw">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Home" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ymh-YD-cZk">
+                                <rect key="frame" x="173.66666666666666" y="415.66666666666669" width="45.666666666666657" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="A5m-wL-1Ql"/>
                         <color key="backgroundColor" systemColor="systemMintColor"/>
+                        <constraints>
+                            <constraint firstItem="ymh-YD-cZk" firstAttribute="centerY" secondItem="guR-PW-bpw" secondAttribute="centerY" id="0JN-FK-DGJ"/>
+                            <constraint firstItem="ymh-YD-cZk" firstAttribute="centerX" secondItem="guR-PW-bpw" secondAttribute="centerX" id="2Dd-wt-D9L"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Home" image="homekit" catalog="system" id="7HJ-zP-yZJ"/>
+                    <connections>
+                        <outlet property="titleLabel" destination="ymh-YD-cZk" id="Tx4-aa-Xoc"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yp3-Nd-TUh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -27,14 +42,29 @@
         <!--Favorite-->
         <scene sceneID="lXa-cC-wxM">
             <objects>
-                <viewController id="ohl-wC-BJc" userLabel="Favorite" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="FavoriteController" id="ohl-wC-BJc" userLabel="Favorite" customClass="FavoriteController" customModule="MovieAPPforATL" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="i64-ai-VwN">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Favorite" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZnW-G7-ckT">
+                                <rect key="frame" x="166.33333333333334" y="415.66666666666669" width="60.333333333333343" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="a5J-8S-FMm"/>
                         <color key="backgroundColor" systemColor="systemYellowColor"/>
+                        <constraints>
+                            <constraint firstItem="ZnW-G7-ckT" firstAttribute="centerY" secondItem="i64-ai-VwN" secondAttribute="centerY" id="Sym-bf-5oB"/>
+                            <constraint firstItem="ZnW-G7-ckT" firstAttribute="centerX" secondItem="i64-ai-VwN" secondAttribute="centerX" id="b2g-5M-5SW"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Favorite" image="star" catalog="system" id="Tvj-Jf-9dT"/>
+                    <connections>
+                        <outlet property="titleLabel" destination="ZnW-G7-ckT" id="5dx-qN-B1e"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Smg-40-WNj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -44,14 +74,29 @@
         <scene sceneID="VwV-qd-6Th">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XM4-D0-4Xv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-                <viewController storyboardIdentifier="MoreViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="mBV-CQ-Vic" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MoreViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="mBV-CQ-Vic" customClass="MoreController" customModule="MovieAPPforATL" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="fGc-ai-44W">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="More" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LOy-6L-JTi">
+                                <rect key="frame" x="177" y="415.66666666666669" width="39.333333333333343" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="PXg-3G-pVL"/>
                         <color key="backgroundColor" systemColor="systemPinkColor"/>
+                        <constraints>
+                            <constraint firstItem="LOy-6L-JTi" firstAttribute="centerX" secondItem="fGc-ai-44W" secondAttribute="centerX" id="4gx-uG-Qaa"/>
+                            <constraint firstItem="LOy-6L-JTi" firstAttribute="centerY" secondItem="fGc-ai-44W" secondAttribute="centerY" id="Pq9-VS-VJ8"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="More" image="folder" catalog="system" id="aVm-iO-81d"/>
+                    <connections>
+                        <outlet property="titleLabel" destination="LOy-6L-JTi" id="hD3-Eu-RXw"/>
+                    </connections>
                 </viewController>
             </objects>
             <point key="canvasLocation" x="-2036" y="-32"/>
