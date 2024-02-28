@@ -8,15 +8,25 @@
 import UIKit
 
 class HomeController: UIViewController {
-    @IBOutlet private weak var titleLabel: UILabel!
+    @IBOutlet private weak var collectionView: UICollectionView!
     private let viewModel = HomeViewModel()
     override func viewDidLoad() {
         super.viewDidLoad()
 //        configureViewModel()
-        viewModel.delegate = self
+        
         viewModel.getPopularMovieList()
+        setupView()
+        
     }
     
+    fileprivate func setupView() {
+        viewModel.delegate = self
+        collectionView.delegate = self
+        collectionView.dataSource = self
+        collectionView.register(UINib(
+            nibName: "MovieCollectionCell",
+            bundle: nil),forCellWithReuseIdentifier: "MovieCollectionCell")
+    }
 //    fileprivate func configureViewModel() {
 //
 //        viewModel.successCallback = { [weak self] in
@@ -31,6 +41,7 @@ class HomeController: UIViewController {
 //    }
 }
 
+//MARK: HomeProtocol
 extension HomeController: HomeProtocol {
     func success() {
         print("success")
@@ -41,4 +52,27 @@ extension HomeController: HomeProtocol {
     }
     
     
+}
+
+//MARK: UICollectionViewDataSource
+
+extension HomeController: UICollectionViewDataSource,
+                          UICollectionViewDelegate,
+                          UICollectionViewDelegateFlowLayout {
+    
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return 2
+    }
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 1
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MovieCollectionCell", for: indexPath) as! MovieCollectionCell
+        return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width:collectionView.frame.width, height: collectionView.frame.height * 0.28)
+    }
 }
