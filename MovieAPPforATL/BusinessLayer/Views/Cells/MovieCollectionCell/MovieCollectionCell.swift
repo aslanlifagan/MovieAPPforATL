@@ -12,9 +12,7 @@ class MovieCollectionCell: UICollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        movieCollectionView.register(UINib(
-            nibName: "MovieCell",
-            bundle: nil),forCellWithReuseIdentifier: "MovieCell")
+        movieCollectionView.registerNib(with: "MovieCell")
     }
     
 }
@@ -28,7 +26,7 @@ extension MovieCollectionCell: UICollectionViewDelegate,
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MovieCell", for: indexPath) as! MovieCell
+        let cell = collectionView.dequeCell(cellClass: MovieCell.self, indexPath: indexPath)
         return cell
     }
     
