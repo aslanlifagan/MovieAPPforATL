@@ -4,6 +4,7 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -16,21 +17,61 @@
                 <rect key="frame" x="0.0" y="0.0" width="97" height="143"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Oh9-yH-gxI">
+                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="WBa-3J-hmA">
                         <rect key="frame" x="8" y="0.0" width="81" height="143"/>
-                        <color key="backgroundColor" red="0.27450980390000002" green="0.33333333329999998" blue="0.72156862749999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                    </view>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="NnI-9v-ces">
+                                <rect key="frame" x="0.0" y="0.0" width="81" height="90.333333333333329"/>
+                                <color key="backgroundColor" systemColor="systemMintColor"/>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="qy5-Yz-XGT">
+                                <rect key="frame" x="0.0" y="98.333333333333329" width="81" height="44.666666666666671"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gdo-Nd-Z0X">
+                                        <rect key="frame" x="0.0" y="0.0" width="81" height="26.333333333333332"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YAH-HF-q61">
+                                        <rect key="frame" x="0.0" y="30.333333333333325" width="81" height="14.333333333333332"/>
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="12"/>
+                                        <color key="textColor" systemColor="secondaryLabelColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </stackView>
                 </subviews>
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
-                <constraint firstAttribute="trailing" secondItem="Oh9-yH-gxI" secondAttribute="trailing" constant="8" id="75H-qY-04c"/>
-                <constraint firstAttribute="bottom" secondItem="Oh9-yH-gxI" secondAttribute="bottom" id="D0o-nV-1wl"/>
-                <constraint firstItem="Oh9-yH-gxI" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="8" id="DFr-jH-wQW"/>
-                <constraint firstItem="Oh9-yH-gxI" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="sRr-7w-Orx"/>
+                <constraint firstItem="WBa-3J-hmA" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="8" id="2iU-Q9-zc6"/>
+                <constraint firstAttribute="trailing" secondItem="WBa-3J-hmA" secondAttribute="trailing" constant="8" id="F32-Jy-K17"/>
+                <constraint firstItem="WBa-3J-hmA" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="UiD-m6-CiC"/>
+                <constraint firstAttribute="bottom" secondItem="WBa-3J-hmA" secondAttribute="bottom" id="xcc-nJ-lRH"/>
             </constraints>
             <size key="customSize" width="97" height="143"/>
+            <connections>
+                <outlet property="movieImageView" destination="NnI-9v-ces" id="SZU-tb-y2H"/>
+                <outlet property="subtitleLabel" destination="YAH-HF-q61" id="xg0-yr-fTo"/>
+                <outlet property="titleLabel" destination="gdo-Nd-Z0X" id="CDg-9J-4ia"/>
+            </connections>
             <point key="canvasLocation" x="103.05343511450381" y="53.169014084507047"/>
         </collectionViewCell>
     </objects>
+    <resources>
+        <systemColor name="secondaryLabelColor">
+            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemMintColor">
+            <color red="0.0" green="0.7803921568627451" blue="0.74509803921568629" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
 </document>

@@ -47,7 +47,7 @@
                                 </constraints>
                             </view>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="fIe-0m-P5N">
-                                <rect key="frame" x="0.0" y="112" width="393" height="657"/>
+                                <rect key="frame" x="16" y="112" width="361" height="657"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="Mxm-rL-yd2">
                                     <size key="itemSize" width="128" height="128"/>
@@ -63,11 +63,11 @@
                         <constraints>
                             <constraint firstItem="kLp-eQ-QDD" firstAttribute="leading" secondItem="A5m-wL-1Ql" secondAttribute="leading" id="0DO-Ol-JWe"/>
                             <constraint firstItem="fIe-0m-P5N" firstAttribute="top" secondItem="kLp-eQ-QDD" secondAttribute="bottom" constant="24" id="9PM-Ml-O8k"/>
-                            <constraint firstItem="fIe-0m-P5N" firstAttribute="leading" secondItem="A5m-wL-1Ql" secondAttribute="leading" id="Psg-Bt-8lk"/>
+                            <constraint firstItem="fIe-0m-P5N" firstAttribute="leading" secondItem="A5m-wL-1Ql" secondAttribute="leading" constant="16" id="Psg-Bt-8lk"/>
                             <constraint firstItem="A5m-wL-1Ql" firstAttribute="trailing" secondItem="kLp-eQ-QDD" secondAttribute="trailing" id="Vw7-PT-UIl"/>
                             <constraint firstItem="A5m-wL-1Ql" firstAttribute="bottom" secondItem="fIe-0m-P5N" secondAttribute="bottom" id="gU2-EP-RJP"/>
                             <constraint firstItem="kLp-eQ-QDD" firstAttribute="top" secondItem="guR-PW-bpw" secondAttribute="top" id="z5Q-T8-cSX"/>
-                            <constraint firstItem="fIe-0m-P5N" firstAttribute="trailing" secondItem="A5m-wL-1Ql" secondAttribute="trailing" id="zmN-BZ-qOi"/>
+                            <constraint firstItem="fIe-0m-P5N" firstAttribute="trailing" secondItem="A5m-wL-1Ql" secondAttribute="trailing" constant="-16" id="zmN-BZ-qOi"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Home" image="homekit" catalog="system" id="7HJ-zP-yZJ"/>

@@ -27,6 +27,7 @@ extension MovieCollectionCell: UICollectionViewDelegate,
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeCell(cellClass: MovieCell.self, indexPath: indexPath)
+        cell.configureCell()
         return cell
     }
     
