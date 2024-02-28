@@ -12,7 +12,7 @@ class HomeController: UIViewController {
     private let viewModel = HomeViewModel()
     override func viewDidLoad() {
         super.viewDidLoad()
-//        configureViewModel()
+        //        configureViewModel()
         
         viewModel.getPopularMovieList()
         setupView()
@@ -24,19 +24,20 @@ class HomeController: UIViewController {
         collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.registerNib(with: "MovieCollectionCell")
+        collectionView.register(UINib(nibName: "MovieCollectionHeaderView", bundle: nil), forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "MovieCollectionHeaderView")
     }
-//    fileprivate func configureViewModel() {
-//
-//        viewModel.successCallback = { [weak self] in
-//            guard let self = self else {return}
-//            print("success")
-//        }
-//
-//        viewModel.errorCallback = { [weak self] errorString in
-//            guard let self = self else {return}
-//            print(errorString)
-//        }
-//    }
+    //    fileprivate func configureViewModel() {
+    //
+    //        viewModel.successCallback = { [weak self] in
+    //            guard let self = self else {return}
+    //            print("success")
+    //        }
+    //
+    //        viewModel.errorCallback = { [weak self] errorString in
+    //            guard let self = self else {return}
+    //            print(errorString)
+    //        }
+    //    }
 }
 
 //MARK: HomeProtocol
@@ -70,7 +71,26 @@ extension HomeController: UICollectionViewDataSource,
         return cell
     }
     
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize{
+        return CGSize(width: collectionView.bounds.width, height: 100)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        
+        switch kind {
+            
+        case UICollectionView.elementKindSectionHeader:
+            
+            let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "MovieCollectionHeaderView", for: indexPath)
+            return headerView
+            
+        default:
+            
+            assert(false, "Unexpected element kind")
+        }
+    }
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width:collectionView.frame.width, height: collectionView.frame.height * 0.28)
+        return CGSize(width:collectionView.frame.width, height: collectionView.frame.height * 0.34)
     }
 }
