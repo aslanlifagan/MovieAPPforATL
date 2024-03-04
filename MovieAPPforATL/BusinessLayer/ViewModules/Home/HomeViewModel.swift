@@ -19,6 +19,24 @@ final class HomeViewModel {
 //    var errorCallback: ((String) -> Void)?
     weak var delegate: HomeProtocol?
     
+    func getMovieForType(type: HeaderType, id: Int) {
+        if type == .trending {
+            if id == 0 {
+                print("getTodayMovieList")
+//                getTodayMovieList()
+            } else {
+                print("getThisWeekMovieList")
+                // getThisWeekMovieList
+            }
+        } else {
+            if id == 0 {
+                getPopularMovieList()
+            } else {
+                print("getTopRatedList")
+                // getTopRatedList
+            }
+        }
+    }
     // MARK: Network
     func getPopularMovieList() {
         MovieManager.shared.getPopularMovieList(pageID:4) { [weak self] responseData, errorString in

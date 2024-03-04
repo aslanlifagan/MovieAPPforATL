@@ -26,6 +26,17 @@ class HomeController: UIViewController {
         collectionView.registerNib(with: "MovieCollectionCell")
         collectionView.register(UINib(nibName: "MovieCollectionHeaderView", bundle: nil), forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "MovieCollectionHeaderView")
     }
+    fileprivate func moreAction(type: HeaderType) {
+        print(type)
+        
+        //burada type gore backende request atilacaq
+    }
+    
+    fileprivate func segmentAction(type: HeaderType, id: Int) {
+        viewModel.getMovieForType(type: type, id: id)
+        
+        //burada type gore backende request atilacaq
+    }
     //    fileprivate func configureViewModel() {
     //
     //        viewModel.successCallback = { [weak self] in
@@ -82,7 +93,16 @@ extension HomeController: UICollectionViewDataSource,
         case UICollectionView.elementKindSectionHeader:
             
             let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "MovieCollectionHeaderView", for: indexPath) as! MovieCollectionHeaderView
-            headerView.configureView(type: indexPath.section == 0 ? .tranding : .category)
+            headerView.type = indexPath.section == 0 ? .trending : .category
+            headerView.configureView()
+            headerView.moreCallBack = { [weak self] headerType in
+                guard let self = self else {return}
+                self.moreAction(type: headerType)
+            }
+            headerView.segmentCallBack = { [weak self] headerType, id in
+                guard let self = self else {return}
+                self.segmentAction(type: headerType, id: id)
+            }
             return headerView
             
         default:

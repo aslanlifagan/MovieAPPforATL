@@ -165,7 +165,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="filemenu.and.selection" catalog="system" width="128" height="93"/>
+        <image name="filemenu.and.selection" catalog="system" width="32" height="32"/>
         <image name="folder" catalog="system" width="128" height="96"/>
         <image name="homekit" catalog="system" width="128" height="104"/>
         <image name="magnifyingglass" catalog="system" width="128" height="117"/>

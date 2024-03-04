@@ -28,7 +28,7 @@ class NetworkHelper {
     private let baseURL = "https://api.themoviedb.org/3/"
     let header = [
         "accept": "application/json",
-         "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIxZmZjOTk4YmQwMDNlYmY4NjExNjE4NzQzODgxODYxNCIsInN1YiI6IjY1ZGIxZTAyOWI2ZTQ3MDE4NjAwYWI4ZiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.fzVDj8_nT9CH8dIMRHCSICGu-FnWbH08kvtYmY6m4ag"
+        "Authorization": "Bearer \(String(data: KeychainHelper.retrieveData(forService: "token")!, encoding: .utf8) ?? "")"
     ]
     
     func requestURL(url: String) -> String {

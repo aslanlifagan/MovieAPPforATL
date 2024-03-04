@@ -6,22 +6,29 @@
 //
 
 import UIKit
+
 enum HeaderType: String {
-case tranding = "Tranding"
-case category = "Category"
+    case trending = "Trending"
+    case category = "Category"
 }
 class MovieCollectionHeaderView: UICollectionReusableView {
     @IBAction func segmentAction(_ sender: Any) {
-        print(segmentView.selectedSegmentIndex)
+        segmentCallBack?(type, segmentView.selectedSegmentIndex)
+        print(type, segmentView.selectedSegmentIndex)
     }
     
     @IBAction func moreAction(_ sender: Any) {
-        print(#function)
+        moreCallBack?(type)
+//        print(type)
+        
     }
     @IBOutlet private weak var segmentView: UISegmentedControl!
     @IBOutlet private weak var titleLabel: UILabel!
     @IBOutlet private weak var moreButton: UIButton!
+    var type: HeaderType = .trending
     
+    var segmentCallBack: ((HeaderType, Int) ->())?
+    var moreCallBack: ((HeaderType) -> ())?
     override func awakeFromNib() {
         super.awakeFromNib()
         segmentView.tintColor = .black
@@ -29,14 +36,16 @@ class MovieCollectionHeaderView: UICollectionReusableView {
         segmentView.setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.label], for: .normal)
     }
     
-    func configureView(type: HeaderType) {
+    func configureView() {
         titleLabel.text = type.rawValue
-
-segmentView.setTitle(
-            type == .tranding ? "Popular" : "Today",
-            forSegmentAt: 0)
+        
         segmentView.setTitle(
-            type == .tranding ? "Top Rated" : "This week",
+            type == .trending ? "Today" : "Popular",
+            forSegmentAt: 0)
+        
+        
+        segmentView.setTitle(
+            type == .trending ? "This week" : "Top Rated",
             forSegmentAt: 1)
     }
 }

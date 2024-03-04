@@ -31,6 +31,7 @@
 		405D39A12B8F95D000F3AE5D /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 405D39A02B8F95D000F3AE5D /* Extensions.swift */; };
 		405D39A92B8F9BA900F3AE5D /* MovieCollectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 405D39A72B8F9BA900F3AE5D /* MovieCollectionHeaderView.swift */; };
 		405D39AA2B8F9BA900F3AE5D /* MovieCollectionHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 405D39A82B8F9BA900F3AE5D /* MovieCollectionHeaderView.xib */; };
+		40A15FDF2B96141E007B812D /* KeychainHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40A15FDE2B96141E007B812D /* KeychainHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -60,6 +61,7 @@
 		405D39A02B8F95D000F3AE5D /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		405D39A72B8F9BA900F3AE5D /* MovieCollectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCollectionHeaderView.swift; sourceTree = "<group>"; };
 		405D39A82B8F9BA900F3AE5D /* MovieCollectionHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MovieCollectionHeaderView.xib; sourceTree = "<group>"; };
+		40A15FDE2B96141E007B812D /* KeychainHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -234,6 +236,7 @@
 			isa = PBXGroup;
 			children = (
 				405D39A02B8F95D000F3AE5D /* Extensions.swift */,
+				40A15FDE2B96141E007B812D /* KeychainHelper.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -343,6 +346,7 @@
 				4055AA752B8CE91F00DB04D4 /* MoreViewModel.swift in Sources */,
 				4055AA602B8CE3EB00DB04D4 /* TabbarController.swift in Sources */,
 				4055AA6E2B8CE8D300DB04D4 /* FavoriteController.swift in Sources */,
+				40A15FDF2B96141E007B812D /* KeychainHelper.swift in Sources */,
 				4055AA842B8CEB1F00DB04D4 /* NetworkManager.swift in Sources */,
 				4055AA6B2B8CE88700DB04D4 /* HomeController.swift in Sources */,
 				405D39982B8F8C5800F3AE5D /* MovieCollectionCell.swift in Sources */,

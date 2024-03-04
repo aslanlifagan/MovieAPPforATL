@@ -23,7 +23,14 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // Set the new root view controller
         let navigationController = UINavigationController(rootViewController: vc)
         newWindow.rootViewController = navigationController
-                
+        let token = "eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIxZmZjOTk4YmQwMDNlYmY4NjExNjE4NzQzODgxODYxNCIsInN1YiI6IjY1ZGIxZTAyOWI2ZTQ3MDE4NjAwYWI4ZiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.fzVDj8_nT9CH8dIMRHCSICGu-FnWbH08kvtYmY6m4ag" // bu melumat bize login requesti atdighimiz zaman backden gelecek
+        let data = token.data(using: .utf8)!
+        let savetoken = KeychainHelper.saveData(data: data, forService: "token")
+        if savetoken {
+            print("save token")
+        } else {
+            print("save token error")
+        }
         
         // Make the window visible
         window = newWindow
