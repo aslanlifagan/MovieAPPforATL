@@ -9,10 +9,15 @@ import UIKit
 
 class MovieCollectionCell: UICollectionViewCell {
     @IBOutlet private weak var movieCollectionView: UICollectionView!
-    
+    private var movieList: [MovieCellProtocol] = []
     override func awakeFromNib() {
         super.awakeFromNib()
         movieCollectionView.registerNib(with: "MovieCell")
+    }
+    
+    func setList(list: [MovieCellProtocol]) {
+        movieList = list
+        movieCollectionView.reloadData()
     }
     
 }
@@ -22,12 +27,13 @@ extension MovieCollectionCell: UICollectionViewDelegate,
                                UICollectionViewDelegateFlowLayout
 {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5 // burdaki listin countunu backdan aliriq
+        return movieList.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeCell(cellClass: MovieCell.self, indexPath: indexPath)
-        cell.configureCell()
+        let model = movieList[indexPath.row]
+        cell.configureCell(model: model)
         return cell
     }
     

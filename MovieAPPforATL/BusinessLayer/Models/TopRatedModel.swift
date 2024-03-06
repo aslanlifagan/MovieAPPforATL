@@ -20,7 +20,20 @@ struct TopRatedMovieModel: Codable {
 }
 
 // MARK: - TopRateResult
-struct TopRateResult: Codable {
+struct TopRateResult: Codable, MovieCellProtocol {
+    
+    var titleString: String {
+        originalTitle ?? ""
+    }
+    
+    var subtitleString: String {
+        releaseDate ?? ""
+    }
+    
+    var iconString: String {
+        ""
+    }
+    
     let adult: Bool?
     let backdropPath: String?
     let genreIDS: [Int]?

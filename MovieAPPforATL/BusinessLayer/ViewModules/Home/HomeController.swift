@@ -12,15 +12,14 @@ class HomeController: UIViewController {
     private let viewModel = HomeViewModel()
     override func viewDidLoad() {
         super.viewDidLoad()
-        //        configureViewModel()
-        
+        configureViewModel()
         viewModel.getPopularMovieList()
         setupView()
         
     }
     
     fileprivate func setupView() {
-        viewModel.delegate = self
+//        viewModel.delegate = self
         collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.registerNib(with: "MovieCollectionCell")
@@ -37,32 +36,38 @@ class HomeController: UIViewController {
         
         //burada type gore backende request atilacaq
     }
-    //    fileprivate func configureViewModel() {
-    //
-    //        viewModel.successCallback = { [weak self] in
-    //            guard let self = self else {return}
-    //            print("success")
-    //        }
-    //
-    //        viewModel.errorCallback = { [weak self] errorString in
-    //            guard let self = self else {return}
-    //            print(errorString)
-    //        }
-    //    }
+    fileprivate func configureViewModel() {
+        
+        viewModel.successCallback = { [weak self] in
+            guard let self = self else {return}
+            self.reloadCollectionView()
+        }
+        
+        viewModel.errorCallback = { [weak self] errorString in
+            guard let self = self else {return}
+            print(errorString)
+        }
+    }
+    
+    fileprivate func reloadCollectionView() {
+        DispatchQueue.main.async {
+            self.collectionView.reloadData()
+        }
+    }
 }
 
-//MARK: HomeProtocol
-extension HomeController: HomeProtocol {
-    func success() {
-        print("success")
-    }
-    
-    func error(errorMessage: String) {
-        print(errorMessage)
-    }
-    
-    
-}
+////MARK: HomeProtocol
+//extension HomeController: HomeProtocol {
+//    func success() {
+//        print("success")
+//    }
+//
+//    func error(errorMessage: String) {
+//        print(errorMessage)
+//    }
+//
+//
+//}
 
 //MARK: UICollectionViewDataSource
 
@@ -79,6 +84,7 @@ extension HomeController: UICollectionViewDataSource,
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeCell(cellClass: MovieCollectionCell.self, indexPath: indexPath)
+        cell.setList(list: viewModel.getMovieList())
         return cell
     }
     

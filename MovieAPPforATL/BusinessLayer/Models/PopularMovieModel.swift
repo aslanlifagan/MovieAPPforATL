@@ -24,7 +24,19 @@ struct PopulerMovieModel: Codable {
 }
 
 // MARK: - MovieResult
-struct MovieResult: Codable {
+struct MovieResult: Codable, MovieCellProtocol {
+    var titleString: String {
+        originalTitle ?? ""
+    }
+    
+    var subtitleString: String {
+        releaseDate ?? ""
+    }
+    
+    var iconString: String {
+        ""
+    }
+    
     let adult: Bool?
     let backdropPath: String?
     let genreIDS: [Int]?

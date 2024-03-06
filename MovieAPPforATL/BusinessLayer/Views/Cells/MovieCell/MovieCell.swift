@@ -7,6 +7,12 @@
 
 import UIKit
 
+protocol MovieCellProtocol {
+    var titleString: String {get}
+    var subtitleString: String {get}
+    var iconString: String {get}
+}
+
 class MovieCell: UICollectionViewCell {
     @IBOutlet private weak var movieImageView: UIImageView!
     @IBOutlet private weak var titleLabel: UILabel!
@@ -21,9 +27,9 @@ class MovieCell: UICollectionViewCell {
         movieImageView.layer.cornerRadius = 8
     }
     
-    func configureCell() {
-        titleLabel.text = "Title"
-        subtitleLabel.text = "Subtitle"
+    func configureCell(model: MovieCellProtocol) {
+        titleLabel.text = model.titleString
+        subtitleLabel.text = model.subtitleString
     }
 
 }
