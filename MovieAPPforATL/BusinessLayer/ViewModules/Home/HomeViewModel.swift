@@ -15,6 +15,7 @@ protocol HomeProtocol: AnyObject {
 final class HomeViewModel {
     
     private var popularList: PopulerMovieModel?
+    private var topRatedList: TopRatedMovieModel?
 //    var successCallback: (() -> Void)?
 //    var errorCallback: ((String) -> Void)?
     weak var delegate: HomeProtocol?
@@ -32,6 +33,7 @@ final class HomeViewModel {
             if id == 0 {
                 getPopularMovieList()
             } else {
+                getTopRatedMovieList()
                 print("getTopRatedList")
                 // getTopRatedList
             }
@@ -49,6 +51,19 @@ final class HomeViewModel {
                 self.delegate?.success()
             }
         }
+    }
+    
+    fileprivate func getTopRatedMovieList() {
+        MovieManager.shared.getTopRatedMovieList(pageID: 1) { [weak self] responseData, errorString in
+            guard let self = self else {return}
+            if let errorString = errorString {
+                self.delegate?.error(errorMessage: errorString)
+            } else if let responseData = responseData {
+                self.topRatedList = responseData
+                self.delegate?.success()
+            }
+        }
+
     }
     deinit {
         print("HomeViewModel")

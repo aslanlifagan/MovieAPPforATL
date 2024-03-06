@@ -25,4 +25,20 @@ class MovieManager {
             }
         }
     }
+    
+    func getTopRatedMovieList(pageID: Int, complete: @escaping((TopRatedMovieModel?, String?) -> Void)){
+        let url = "\(MovieHelper.topRated.path)\(pageID)"
+        NetworkManager.shared.request(
+            type: TopRatedMovieModel.self,
+            url: url,
+            header: NetworkHelper.shared.header,
+            method: .get) { response in
+            switch response {
+            case .success(let data):
+                complete(data, nil)
+            case .failure(let error):
+                complete(nil, error.rawValue)
+            }
+        }
+    }
 }
