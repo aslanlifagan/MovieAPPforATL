@@ -25,14 +25,9 @@ class HomeController: UIViewController {
         collectionView.registerNib(with: "MovieCollectionCell")
         collectionView.register(UINib(nibName: "MovieCollectionHeaderView", bundle: nil), forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "MovieCollectionHeaderView")
     }
-    fileprivate func moreAction(type: HeaderType) {
-        print(type)
-        
-        //burada type gore backende request atilacaq
-    }
     
-    fileprivate func segmentAction(type: HeaderType, id: Int) {
-        viewModel.getMovieForType(type: type, id: id)
+    fileprivate func segmentAction(type: SegmentType) {
+        viewModel.getMovieForType(type: type)
         
         //burada type gore backende request atilacaq
     }
@@ -74,10 +69,6 @@ class HomeController: UIViewController {
 extension HomeController: UICollectionViewDataSource,
                           UICollectionViewDelegate,
                           UICollectionViewDelegateFlowLayout {
-    
-    func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 2
-    }
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 1
     }
@@ -98,16 +89,16 @@ extension HomeController: UICollectionViewDataSource,
             
         case UICollectionView.elementKindSectionHeader:
             
-            let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "MovieCollectionHeaderView", for: indexPath) as! MovieCollectionHeaderView
-            headerView.type = indexPath.section == 0 ? .trending : .category
+            let headerView = collectionView.dequeueReusableSupplementaryView(
+                ofKind: kind,
+                withReuseIdentifier: "MovieCollectionHeaderView",
+                for: indexPath) as! MovieCollectionHeaderView
+            
             headerView.configureView()
-            headerView.moreCallBack = { [weak self] headerType in
+            
+            headerView.segmentCallBack = { [weak self] segmenType in
                 guard let self = self else {return}
-                self.moreAction(type: headerType)
-            }
-            headerView.segmentCallBack = { [weak self] headerType, id in
-                guard let self = self else {return}
-                self.segmentAction(type: headerType, id: id)
+                self.segmentAction(type: segmenType)
             }
             return headerView
             

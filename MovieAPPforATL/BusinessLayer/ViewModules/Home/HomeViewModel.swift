@@ -21,25 +21,18 @@ final class HomeViewModel {
     var errorCallback: ((String) -> Void)?
 //    weak var delegate: HomeProtocol?
     
-    func getMovieForType(type: HeaderType, id: Int) {
-        if type == .trending {
-            if id == 0 {
-                print("getTodayMovieList")
-//                getTodayMovieList()
-            } else {
-                print("getThisWeekMovieList")
-                // getThisWeekMovieList
-            }
-        } else {
-            if id == 0 {
-                getPopularMovieList()
-                guard let list = popularList else {return}
-                movieList = list
-            } else {
-                getTopRatedMovieList()
-                guard let list = topRatedList else {return}
-                movieList = list
-            }
+    func getMovieForType(type: SegmentType) {
+        switch type {
+        case .TopRated:
+            getTopRatedMovieList()
+            print("movieList")
+        case .ThisWeek:
+            print("getThisWeekMovieList")
+        case .Popular:
+            getPopularMovieList()
+            print("popularList")
+        case .Today:
+            print("getTodayMovieList")
         }
     }
     
@@ -56,6 +49,7 @@ final class HomeViewModel {
                 self.errorCallback?(errorString)
             } else if let responseData = responseData?.results {
                 self.popularList = responseData
+                self.movieList = responseData
 //                self.delegate?.success()
                 self.successCallback?()
             }
@@ -70,7 +64,7 @@ final class HomeViewModel {
 //                self.delegate?.error(errorMessage: errorString)
             } else if let responseData = responseData?.results {
                 self.topRatedList = responseData
-//                self.delegate?.success()
+                self.movieList = responseData
                 self.successCallback?()
             }
         }
