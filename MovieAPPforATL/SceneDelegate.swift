@@ -36,6 +36,14 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window = newWindow
         window?.makeKeyAndVisible()
     }
+    
+    func reloadApp() {
+        window?.rootViewController?.dismiss(animated: false, completion: nil)
+        window?.rootViewController = nil
+        let vc = UIStoryboard.init(name: "Home", bundle: Bundle.main).instantiateViewController(withIdentifier: "TabbarController") as? TabbarController ?? TabbarController()
+        window?.rootViewController = vc
+        window?.makeKeyAndVisible()
+    }
 
     func sceneDidDisconnect(_ scene: UIScene) {
         // Called as the scene is being released by the system.

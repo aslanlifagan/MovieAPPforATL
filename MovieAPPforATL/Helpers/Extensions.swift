@@ -41,3 +41,16 @@ extension UITableView {
         return dequeueReusableCell(withIdentifier: identifier, for: indexPath) as! T
     }
 }
+
+//extension String {
+//    func localized() -> String {
+//        if UserDefaultsHelper.getInteger(key: "appLanguage") == 1 {
+//            let path = Bundle.main.path(forResource: "az", ofType: "lproj")
+//            let bundle = Bundle(path: path!)
+//            return NSLocalizedString(self, tableName: "Localizable", bundle: bundle!, value: self, comment: self)
+//        }
+//        let path = Bundle.main.path(forResource: "en", ofType: "lproj")
+//        let bundle = Bundle(path: path!)
+//        return NSLocalizedString(self, tableName: "Localizable", bundle: bundle!, value: self, comment: self)
+//    }
+//}

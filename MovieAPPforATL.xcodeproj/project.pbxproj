@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		401F07782B9E5005000500A0 /* UserDefaultsHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 401F07772B9E5005000500A0 /* UserDefaultsHelper.swift */; };
 		4055AA4C2B8CE33A00DB04D4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4055AA4B2B8CE33A00DB04D4 /* AppDelegate.swift */; };
 		4055AA4E2B8CE33A00DB04D4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4055AA4D2B8CE33A00DB04D4 /* SceneDelegate.swift */; };
 		4055AA552B8CE33D00DB04D4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4055AA542B8CE33D00DB04D4 /* Assets.xcassets */; };
@@ -54,6 +55,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		401F07772B9E5005000500A0 /* UserDefaultsHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDefaultsHelper.swift; sourceTree = "<group>"; };
 		4055AA482B8CE33A00DB04D4 /* MovieAPPforATL.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MovieAPPforATL.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4055AA4B2B8CE33A00DB04D4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4055AA4D2B8CE33A00DB04D4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -275,6 +277,7 @@
 		405D39A22B8F95EA00F3AE5D /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				401F07772B9E5005000500A0 /* UserDefaultsHelper.swift */,
 				405D39A02B8F95D000F3AE5D /* Extensions.swift */,
 				40A15FDE2B96141E007B812D /* KeychainHelper.swift */,
 			);
@@ -425,6 +428,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				401F07782B9E5005000500A0 /* UserDefaultsHelper.swift in Sources */,
 				4055AA862B8CEB1F00DB04D4 /* MovieManager.swift in Sources */,
 				4055AA752B8CE91F00DB04D4 /* MoreViewModel.swift in Sources */,
 				4055AA602B8CE3EB00DB04D4 /* TabbarController.swift in Sources */,

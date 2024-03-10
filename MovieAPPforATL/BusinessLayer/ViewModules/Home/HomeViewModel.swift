@@ -71,6 +71,6 @@ final class HomeViewModel {
 
     }
     deinit {
-        print("HomeViewModel")
+        print("****", #function, String(describing: type(of: self)))
     }
 }
