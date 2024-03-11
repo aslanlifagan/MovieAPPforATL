@@ -40,6 +40,10 @@ final class HomeViewModel {
         return movieList
     }
 
+    func getMoviesCount() -> Int{
+        return movieList.count
+    }
+    
     // MARK: Network
     func getPopularMovieList() {
         MovieManager.shared.getPopularMovieList(pageID:4) { [weak self] responseData, errorString in

@@ -27,8 +27,6 @@
 		4055AA852B8CEB1F00DB04D4 /* MovieHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4055AA7F2B8CEB1F00DB04D4 /* MovieHelper.swift */; };
 		4055AA862B8CEB1F00DB04D4 /* MovieManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4055AA802B8CEB1F00DB04D4 /* MovieManager.swift */; };
 		4055AA882B8CF26800DB04D4 /* PopularMovieModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4055AA872B8CF26800DB04D4 /* PopularMovieModel.swift */; };
-		405D39982B8F8C5800F3AE5D /* MovieCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 405D39962B8F8C5800F3AE5D /* MovieCollectionCell.swift */; };
-		405D39992B8F8C5800F3AE5D /* MovieCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 405D39972B8F8C5800F3AE5D /* MovieCollectionCell.xib */; };
 		405D399C2B8F8E6B00F3AE5D /* MovieCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 405D399A2B8F8E6B00F3AE5D /* MovieCell.swift */; };
 		405D399D2B8F8E6B00F3AE5D /* MovieCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 405D399B2B8F8E6B00F3AE5D /* MovieCell.xib */; };
 		405D39A12B8F95D000F3AE5D /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 405D39A02B8F95D000F3AE5D /* Extensions.swift */; };
@@ -80,8 +78,6 @@
 		4055AA7F2B8CEB1F00DB04D4 /* MovieHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieHelper.swift; sourceTree = "<group>"; };
 		4055AA802B8CEB1F00DB04D4 /* MovieManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieManager.swift; sourceTree = "<group>"; };
 		4055AA872B8CF26800DB04D4 /* PopularMovieModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularMovieModel.swift; sourceTree = "<group>"; };
-		405D39962B8F8C5800F3AE5D /* MovieCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCollectionCell.swift; sourceTree = "<group>"; };
-		405D39972B8F8C5800F3AE5D /* MovieCollectionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MovieCollectionCell.xib; sourceTree = "<group>"; };
 		405D399A2B8F8E6B00F3AE5D /* MovieCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCell.swift; sourceTree = "<group>"; };
 		405D399B2B8F8E6B00F3AE5D /* MovieCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MovieCell.xib; sourceTree = "<group>"; };
 		405D39A02B8F95D000F3AE5D /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
@@ -257,18 +253,8 @@
 			children = (
 				405D39A42B8F9B2B00F3AE5D /* Headers */,
 				405D399F2B8F8E7D00F3AE5D /* MovieCell */,
-				405D399E2B8F8E7000F3AE5D /* MovieCollectionCell */,
 			);
 			path = Cells;
-			sourceTree = "<group>";
-		};
-		405D399E2B8F8E7000F3AE5D /* MovieCollectionCell */ = {
-			isa = PBXGroup;
-			children = (
-				405D39962B8F8C5800F3AE5D /* MovieCollectionCell.swift */,
-				405D39972B8F8C5800F3AE5D /* MovieCollectionCell.xib */,
-			);
-			path = MovieCollectionCell;
 			sourceTree = "<group>";
 		};
 		405D399F2B8F8E7D00F3AE5D /* MovieCell */ = {
@@ -409,7 +395,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				40C923482B98BF68002CB5E9 /* Montserrat-SemiBoldItalic.ttf in Resources */,
-				405D39992B8F8C5800F3AE5D /* MovieCollectionCell.xib in Resources */,
 				40C9234A2B98BF68002CB5E9 /* Montserrat-Italic.ttf in Resources */,
 				40C923472B98BF68002CB5E9 /* Montserrat-Black.ttf in Resources */,
 				40C9234E2B98BF68002CB5E9 /* Montserrat-ExtraLight.ttf in Resources */,
@@ -451,7 +436,6 @@
 				40A15FDF2B96141E007B812D /* KeychainHelper.swift in Sources */,
 				4055AA842B8CEB1F00DB04D4 /* NetworkManager.swift in Sources */,
 				4055AA6B2B8CE88700DB04D4 /* HomeController.swift in Sources */,
-				405D39982B8F8C5800F3AE5D /* MovieCollectionCell.swift in Sources */,
 				4055AA832B8CEB1F00DB04D4 /* NetworkHelper.swift in Sources */,
 				4055AA4C2B8CE33A00DB04D4 /* AppDelegate.swift in Sources */,
 				40C923592B98C521002CB5E9 /* TopRatedModel.swift in Sources */,
