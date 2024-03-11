@@ -12,7 +12,8 @@ class MoreController: UIViewController {
     @IBOutlet private weak var changeButton: UIButton!
     
     @IBAction func changeButtonAction(_ sender: Any) {
-//        UserDefaultsHelper.setInteger(key: "appLanguage", value:1)
+        UserDefaultsHelper.setString(key: "AppLanguage", value: "en")
+        
         if let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
             let delegate = windowScene.delegate as? SceneDelegate {
             delegate.reloadApp()
@@ -20,6 +21,7 @@ class MoreController: UIViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        titleLabel.text = "hi".localized()
     }
 
 }

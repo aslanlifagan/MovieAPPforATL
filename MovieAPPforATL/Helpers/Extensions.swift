@@ -42,15 +42,15 @@ extension UITableView {
     }
 }
 
-//extension String {
-//    func localized() -> String {
-//        if UserDefaultsHelper.getInteger(key: "appLanguage") == 1 {
-//            let path = Bundle.main.path(forResource: "az", ofType: "lproj")
-//            let bundle = Bundle(path: path!)
-//            return NSLocalizedString(self, tableName: "Localizable", bundle: bundle!, value: self, comment: self)
-//        }
-//        let path = Bundle.main.path(forResource: "en", ofType: "lproj")
-//        let bundle = Bundle(path: path!)
-//        return NSLocalizedString(self, tableName: "Localizable", bundle: bundle!, value: self, comment: self)
-//    }
-//}
+extension String {
+    func localized() -> String {
+        if UserDefaultsHelper.getString(key: "AppLanguage") == "az" {
+            let path = Bundle.main.path(forResource: "az", ofType: "lproj")
+            let bundle = Bundle(path: path!)
+            return NSLocalizedString(self, tableName: "Localizable", bundle: bundle!, value: self, comment: self)
+        }
+        let path = Bundle.main.path(forResource: "en", ofType: "lproj")
+        let bundle = Bundle(path: path!)
+        return NSLocalizedString(self, tableName: "Localizable", bundle: bundle!, value: self, comment: self)
+    }
+}
