@@ -30,6 +30,7 @@ class MovieCell: UICollectionViewCell {
     func configureCell(model: MovieCellProtocol) {
         titleLabel.text = model.titleString
         subtitleLabel.text = model.subtitleString
+        movieImageView.loadURL(model.iconString)
     }
 
 }

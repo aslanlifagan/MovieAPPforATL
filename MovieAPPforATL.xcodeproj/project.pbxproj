@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		400DF15E2B9F585E00F69170 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 400DF1602B9F585E00F69170 /* Localizable.strings */; };
+		400DF1642B9F601A00F69170 /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 400DF1632B9F601A00F69170 /* SDWebImage */; };
 		401F07782B9E5005000500A0 /* UserDefaultsHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 401F07772B9E5005000500A0 /* UserDefaultsHelper.swift */; };
 		4055AA4C2B8CE33A00DB04D4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4055AA4B2B8CE33A00DB04D4 /* AppDelegate.swift */; };
 		4055AA4E2B8CE33A00DB04D4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4055AA4D2B8CE33A00DB04D4 /* SceneDelegate.swift */; };
@@ -113,6 +114,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				400DF1642B9F601A00F69170 /* SDWebImage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -357,6 +359,9 @@
 			dependencies = (
 			);
 			name = MovieAPPforATL;
+			packageProductDependencies = (
+				400DF1632B9F601A00F69170 /* SDWebImage */,
+			);
 			productName = MovieAPPforATL;
 			productReference = 4055AA482B8CE33A00DB04D4 /* MovieAPPforATL.app */;
 			productType = "com.apple.product-type.application";
@@ -386,6 +391,9 @@
 				az,
 			);
 			mainGroup = 4055AA3F2B8CE33A00DB04D4;
+			packageReferences = (
+				400DF1622B9F601A00F69170 /* XCRemoteSwiftPackageReference "SDWebImage" */,
+			);
 			productRefGroup = 4055AA492B8CE33A00DB04D4 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -675,6 +683,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		400DF1622B9F601A00F69170 /* XCRemoteSwiftPackageReference "SDWebImage" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImage";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		400DF1632B9F601A00F69170 /* SDWebImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 400DF1622B9F601A00F69170 /* XCRemoteSwiftPackageReference "SDWebImage" */;
+			productName = SDWebImage;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 4055AA402B8CE33A00DB04D4 /* Project object */;
 }

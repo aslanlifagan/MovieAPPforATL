@@ -7,6 +7,7 @@
 
 import Foundation
 import UIKit
+import SDWebImage
 
 extension UICollectionView {
     func registerNib(with identifier: String)
@@ -52,5 +53,14 @@ extension String {
         let path = Bundle.main.path(forResource: "en", ofType: "lproj")
         let bundle = Bundle(path: path!)
         return NSLocalizedString(self, tableName: "Localizable", bundle: bundle!, value: self, comment: self)
+    }
+}
+extension UIImageView {
+    func loadURL(_ url: String) {
+        let urlString = url.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? ""
+        if let url = URL(string: urlString) {
+            print(url)
+            sd_setImage(with: url)
+        }
     }
 }
