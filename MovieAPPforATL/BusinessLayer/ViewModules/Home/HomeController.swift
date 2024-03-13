@@ -12,7 +12,18 @@ class HomeController: UIViewController {
     @IBOutlet private weak var sortButton: UIButton!
     @IBOutlet private weak var searchButton: UIButton!
     @IBOutlet private weak var textField: UITextField!
+    @IBOutlet private weak var indicatorView: UIActivityIndicatorView!
+    
     private var hideSearchField: Bool = true
+    
+    private var showLoading: Bool = false {
+        didSet {
+            DispatchQueue.main.async {
+                self.showLoading ? self.indicatorView.startAnimating() : self.indicatorView.stopAnimating()
+            }
+            
+        }
+    }
     private let viewModel = HomeViewModel()
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,11 +58,17 @@ class HomeController: UIViewController {
         collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.registerNib(with: "MovieCell")
-        collectionView.register(UINib(nibName: "MovieCollectionHeaderView", bundle: nil), forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "MovieCollectionHeaderView")
+        collectionView.register(
+            UINib(
+                nibName: "MovieCollectionHeaderView",
+                bundle: nil),
+            forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader,
+            withReuseIdentifier: "MovieCollectionHeaderView")
         
     }
     
     fileprivate func segmentAction(type: SegmentType) {
+        showLoading = true
         viewModel.getMovieForType(type: type)
         
         //burada type gore backende request atilacaq
@@ -60,11 +77,13 @@ class HomeController: UIViewController {
         
         viewModel.successCallback = { [weak self] in
             guard let self = self else {return}
+            self.showLoading = false
             self.reloadCollectionView()
         }
         
         viewModel.errorCallback = { [weak self] errorString in
             guard let self = self else {return}
+            self.showLoading = false
             print(errorString)
         }
     }
