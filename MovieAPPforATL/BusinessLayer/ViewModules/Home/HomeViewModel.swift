@@ -16,6 +16,8 @@ final class HomeViewModel {
     
     private var popularList: [MovieResult]?
     private var topRatedList: [TopRateResult]?
+    private var todayModel: TrendingModel?
+    private var weekModel: TrendingModel?
     private var movieList: [MovieCellProtocol] = []
     var successCallback: (() -> Void)?
     var errorCallback: ((String) -> Void)?
@@ -27,11 +29,13 @@ final class HomeViewModel {
             getTopRatedMovieList()
             print("movieList")
         case .ThisWeek:
+            getWeekMovieList()
             print("getThisWeekMovieList")
         case .Popular:
             getPopularMovieList()
             print("popularList")
         case .Today:
+            getTodayMovieList()
             print("getTodayMovieList")
         }
     }
@@ -70,6 +74,32 @@ final class HomeViewModel {
                 self.topRatedList = responseData
                 self.movieList = responseData
                 self.successCallback?()
+            }
+        }
+
+    }
+    
+    fileprivate func getTodayMovieList() {
+        TrendingManager.shared.getTodayMovieList(pageID: 1) { [weak self] responseData, errorString in
+            guard let self = self else {return}
+            if let errorString = errorString {
+                self.errorCallback?(errorString)
+            } else if let responseData = responseData {
+                self.todayModel = responseData
+                self.movieList = responseData.results ?? []
+            }
+        }
+
+    }
+    
+    fileprivate func getWeekMovieList() {
+        TrendingManager.shared.getWeekMovieList(pageID: 1) { [weak self] responseData, errorString in
+            guard let self = self else {return}
+            if let errorString = errorString {
+                self.errorCallback?(errorString)
+            } else if let responseData = responseData {
+                self.weekModel = responseData
+                self.movieList = responseData.results ?? []
             }
         }
 

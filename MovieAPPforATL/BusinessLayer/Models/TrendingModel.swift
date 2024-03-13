@@ -1,0 +1,68 @@
+//
+//  TrendingModel.swift
+//  MovieAPPforATL
+//
+//  Created by Fagan Aslanli on 13.03.24.
+//
+
+import Foundation
+
+// MARK: - TrendingModel
+struct TrendingModel: Codable {
+    let page: Int?
+    let results: [TrendingResult]?
+    let totalPages, totalResults: Int?
+
+    enum CodingKeys: String, CodingKey {
+        case page, results
+        case totalPages = "total_pages"
+        case totalResults = "total_results"
+    }
+}
+
+// MARK: - Result
+struct TrendingResult: Codable, MovieCellProtocol {
+    var titleString: String {
+        originalTitle ?? ""
+    }
+    
+    var subtitleString: String {
+        releaseDate ?? ""
+    }
+    
+    var iconString: String {
+        "https://media.themoviedb.org/t/p/w300_and_h450_bestv2/\(posterPath ?? "")"
+    }
+    
+    let adult: Bool?
+    let backdropPath: String?
+    let id: Int?
+    let title: String?
+    let originalLanguage: String?
+    let originalTitle, overview, posterPath: String?
+    let mediaType: String?
+    let genreIDS: [Int]?
+    let popularity: Double?
+    let releaseDate: String?
+    let video: Bool?
+    let voteAverage: Double?
+    let voteCount: Int?
+
+    enum CodingKeys: String, CodingKey {
+        case adult
+        case backdropPath = "backdrop_path"
+        case id, title
+        case originalLanguage = "original_language"
+        case originalTitle = "original_title"
+        case overview
+        case posterPath = "poster_path"
+        case mediaType = "media_type"
+        case genreIDS = "genre_ids"
+        case popularity
+        case releaseDate = "release_date"
+        case video
+        case voteAverage = "vote_average"
+        case voteCount = "vote_count"
+    }
+}
+
