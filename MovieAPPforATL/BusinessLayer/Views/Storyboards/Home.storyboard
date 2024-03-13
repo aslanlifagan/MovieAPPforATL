@@ -17,37 +17,57 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kLp-eQ-QDD" userLabel="HeaderView">
-                                <rect key="frame" x="0.0" y="0.0" width="393" height="88"/>
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="96"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="filemenu.and.selection" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="f6h-vC-GoQ">
-                                        <rect key="frame" x="24" y="53.666666666666671" width="24" height="21.000000000000014"/>
+                                    <textField hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Search..." minimumFontSize="16" translatesAutoresizingMaskIntoConstraints="NO" id="ezh-cq-Eeu">
+                                        <rect key="frame" x="24" y="56" width="309" height="36"/>
+                                        <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="24" id="9kx-pc-Iz6"/>
-                                            <constraint firstAttribute="width" constant="24" id="k3V-qM-XIr"/>
+                                            <constraint firstAttribute="height" constant="36" id="ZXC-gh-aWe"/>
                                         </constraints>
-                                    </imageView>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y2f-N4-G0i">
-                                        <rect key="frame" x="345" y="52" width="24" height="24"/>
+                                        <rect key="frame" x="345" y="60" width="24" height="24"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="24" id="PIj-Ru-9Pn"/>
-                                            <constraint firstAttribute="height" constant="24" id="ju3-ue-Dwc"/>
+                                            <constraint firstAttribute="width" constant="24" id="JLN-2i-vgr"/>
+                                            <constraint firstAttribute="height" constant="24" id="tGu-tq-zdd"/>
                                         </constraints>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" image="magnifyingglass" catalog="system" title=" "/>
+                                        <connections>
+                                            <action selector="searchButtonAction:" destination="BRs-LR-8gi" eventType="touchUpInside" id="Hrz-0u-iKE"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5BD-z4-Kqw">
+                                        <rect key="frame" x="24" y="60" width="24" height="24"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="24" id="aUV-rq-b35"/>
+                                            <constraint firstAttribute="height" constant="24" id="lAV-bG-fwb"/>
+                                        </constraints>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title=" " image="filemenu.and.selection" catalog="system"/>
+                                        <connections>
+                                            <action selector="sortButtonAction:" destination="BRs-LR-8gi" eventType="touchUpInside" id="aEQ-Xz-v7q"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="tintColor" red="0.27450980390000002" green="0.33333333329999998" blue="0.72156862749999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="88" id="34a-w2-hlE"/>
-                                    <constraint firstItem="f6h-vC-GoQ" firstAttribute="leading" secondItem="kLp-eQ-QDD" secondAttribute="leading" constant="24" id="MQ5-pu-dVW"/>
-                                    <constraint firstAttribute="bottom" secondItem="Y2f-N4-G0i" secondAttribute="bottom" constant="12" id="UrZ-mI-lnf"/>
-                                    <constraint firstAttribute="bottom" secondItem="f6h-vC-GoQ" secondAttribute="bottom" constant="12" id="WjL-7r-nxg"/>
-                                    <constraint firstAttribute="trailing" secondItem="Y2f-N4-G0i" secondAttribute="trailing" constant="24" id="zgI-o7-1X6"/>
+                                    <constraint firstAttribute="bottom" secondItem="Y2f-N4-G0i" secondAttribute="bottom" constant="12" id="2NL-Bm-iMK"/>
+                                    <constraint firstAttribute="height" constant="96" id="34a-w2-hlE"/>
+                                    <constraint firstItem="Y2f-N4-G0i" firstAttribute="leading" secondItem="ezh-cq-Eeu" secondAttribute="trailing" constant="12" id="Ara-oL-AhS"/>
+                                    <constraint firstAttribute="trailing" secondItem="Y2f-N4-G0i" secondAttribute="trailing" constant="24" id="PVC-qS-iNq"/>
+                                    <constraint firstAttribute="bottom" secondItem="ezh-cq-Eeu" secondAttribute="bottom" constant="4" id="fp3-pl-ltH"/>
+                                    <constraint firstItem="ezh-cq-Eeu" firstAttribute="leading" secondItem="kLp-eQ-QDD" secondAttribute="leading" constant="24" id="lFy-3C-Jsg"/>
+                                    <constraint firstItem="5BD-z4-Kqw" firstAttribute="leading" secondItem="kLp-eQ-QDD" secondAttribute="leading" constant="24" id="s4N-p6-57m"/>
+                                    <constraint firstAttribute="bottom" secondItem="5BD-z4-Kqw" secondAttribute="bottom" constant="12" id="yjr-KS-8yQ"/>
                                 </constraints>
                             </view>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="fIe-0m-P5N">
-                                <rect key="frame" x="16" y="112" width="361" height="657"/>
+                                <rect key="frame" x="16" y="120" width="361" height="649"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="Mxm-rL-yd2">
                                     <size key="itemSize" width="128" height="128"/>
@@ -73,11 +93,14 @@
                     <tabBarItem key="tabBarItem" title="Home" image="homekit" catalog="system" id="7HJ-zP-yZJ"/>
                     <connections>
                         <outlet property="collectionView" destination="fIe-0m-P5N" id="HAa-mf-juI"/>
+                        <outlet property="searchButton" destination="Y2f-N4-G0i" id="6PM-eq-soH"/>
+                        <outlet property="sortButton" destination="5BD-z4-Kqw" id="2Co-9Y-xna"/>
+                        <outlet property="textField" destination="ezh-cq-Eeu" id="Oyg-BD-Smv"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yp3-Nd-TUh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-4714" y="-32"/>
+            <point key="canvasLocation" x="-4715.2671755725187" y="-32.394366197183103"/>
         </scene>
         <!--Favorite-->
         <scene sceneID="lXa-cC-wxM">

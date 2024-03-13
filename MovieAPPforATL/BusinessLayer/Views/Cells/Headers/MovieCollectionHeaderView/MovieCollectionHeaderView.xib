@@ -21,13 +21,13 @@
                             <rect key="frame" x="0.0" y="0.0" width="340" height="52"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MuX-YR-6MJ">
-                                    <rect key="frame" x="0.0" y="0.0" width="59.666666666666664" height="52"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="340" height="52"/>
                                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="24"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4NT-RR-0Ks">
-                                    <rect key="frame" x="83.666666666666657" y="0.0" width="256.33333333333337" height="52"/>
+                                <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4NT-RR-0Ks">
+                                    <rect key="frame" x="0.0" y="0.0" width="0.0" height="52"/>
                                     <color key="tintColor" systemColor="labelColor"/>
                                     <state key="normal" title="Button"/>
                                     <buttonConfiguration key="configuration" style="plain" title="See more" titleAlignment="trailing"/>

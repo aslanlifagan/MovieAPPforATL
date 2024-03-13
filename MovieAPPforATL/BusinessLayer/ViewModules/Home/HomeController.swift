@@ -9,6 +9,10 @@ import UIKit
 
 class HomeController: UIViewController {
     @IBOutlet private weak var collectionView: UICollectionView!
+    @IBOutlet private weak var sortButton: UIButton!
+    @IBOutlet private weak var searchButton: UIButton!
+    @IBOutlet private weak var textField: UITextField!
+    private var hideSearchField: Bool = true
     private let viewModel = HomeViewModel()
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -17,13 +21,34 @@ class HomeController: UIViewController {
         setupView()
         
     }
-    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(true, animated: false)
+    }
+    @IBAction func searchButtonAction(_ sender: Any) {
+        //        hideSearchField = !hideSearchField
+        hideSearchField.toggle()
+        UIView.transition(
+            with: textField,
+            duration: 0.8,
+            options: .transitionFlipFromTop,
+            animations: { [weak self] in
+                guard let self = self else {return}
+                self.textField.isHidden = self.hideSearchField
+                self.sortButton.isHidden = !self.hideSearchField
+            })
+    }
+    @IBAction func sortButtonAction(_ sender: Any) {
+        print(#function)
+    }
     fileprivate func setupView() {
-//        viewModel.delegate = self
+        //        viewModel.delegate = self
+        
         collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.registerNib(with: "MovieCell")
         collectionView.register(UINib(nibName: "MovieCollectionHeaderView", bundle: nil), forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "MovieCollectionHeaderView")
+        
     }
     
     fileprivate func segmentAction(type: SegmentType) {
@@ -48,6 +73,9 @@ class HomeController: UIViewController {
         DispatchQueue.main.async {
             self.collectionView.reloadData()
         }
+    }
+    @objc func sortClicked() {
+        print(#function)
     }
 }
 
@@ -109,7 +137,10 @@ extension HomeController: UICollectionViewDataSource,
         }
     }
     
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+    func collectionView(
+        _ collectionView: UICollectionView,
+        layout collectionViewLayout: UICollectionViewLayout,
+        sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width:collectionView.frame.width/3, height: collectionView.frame.height * 0.4)
     }
 }
