@@ -36,8 +36,9 @@ class HomeController: UIViewController {
         super.viewWillAppear(animated)
         navigationController?.setNavigationBarHidden(true, animated: false)
     }
+    
     @IBAction func searchButtonAction(_ sender: Any) {
-        //        hideSearchField = !hideSearchField
+        
         hideSearchField.toggle()
         UIView.transition(
             with: textField,
@@ -48,7 +49,9 @@ class HomeController: UIViewController {
                 self.textField.isHidden = self.hideSearchField
                 self.sortButton.isHidden = !self.hideSearchField
             })
+        
     }
+    
     @IBAction func sortButtonAction(_ sender: Any) {
         print(#function)
     }
@@ -160,6 +163,14 @@ extension HomeController: UICollectionViewDataSource,
         _ collectionView: UICollectionView,
         layout collectionViewLayout: UICollectionViewLayout,
         sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width:collectionView.frame.width/3, height: collectionView.frame.height * 0.4)
+            return CGSize(width:collectionView.frame.width/3, height: collectionView.frame.height * 0.4)
+        }
+}
+
+extension HomeController: UITextFieldDelegate {
+    func textFieldDidChangeSelection(_ textField: UITextField) {
+        guard let text = textField.text else {return}
+        // burada bir search requesti atiriq
+        print(#function, text)
     }
 }
