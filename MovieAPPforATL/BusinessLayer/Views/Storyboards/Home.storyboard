@@ -80,7 +80,7 @@
                                 </collectionViewFlowLayout>
                                 <cells/>
                             </collectionView>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="large" id="Pja-nB-0Iu">
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="large" id="Pja-nB-0Iu">
                                 <rect key="frame" x="16" y="101" width="361" height="649"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -120,23 +120,27 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Favorite" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZnW-G7-ckT">
-                                <rect key="frame" x="166.33333333333334" y="415.66666666666669" width="60.333333333333343" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vAI-8z-Pbf">
+                                <rect key="frame" x="170" y="408.66666666666669" width="53.333333333333343" height="35"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="test"/>
+                                <connections>
+                                    <action selector="changeButtonAction:" destination="mBV-CQ-Vic" eventType="touchUpInside" id="gbd-UQ-r6G"/>
+                                    <action selector="testButtonAction:" destination="ohl-wC-BJc" eventType="touchUpInside" id="0aZ-eK-cRc"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="a5J-8S-FMm"/>
                         <color key="backgroundColor" systemColor="systemYellowColor"/>
                         <constraints>
-                            <constraint firstItem="ZnW-G7-ckT" firstAttribute="centerY" secondItem="i64-ai-VwN" secondAttribute="centerY" id="Sym-bf-5oB"/>
-                            <constraint firstItem="ZnW-G7-ckT" firstAttribute="centerX" secondItem="i64-ai-VwN" secondAttribute="centerX" id="b2g-5M-5SW"/>
+                            <constraint firstItem="vAI-8z-Pbf" firstAttribute="centerY" secondItem="i64-ai-VwN" secondAttribute="centerY" id="95o-rk-Ta0"/>
+                            <constraint firstItem="vAI-8z-Pbf" firstAttribute="centerX" secondItem="i64-ai-VwN" secondAttribute="centerX" id="kTm-YQ-Zv5"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Favorite" image="star" catalog="system" id="Tvj-Jf-9dT"/>
                     <connections>
-                        <outlet property="titleLabel" destination="ZnW-G7-ckT" id="5dx-qN-B1e"/>
+                        <outlet property="testButton" destination="vAI-8z-Pbf" id="OUr-LN-tnU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Smg-40-WNj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

@@ -8,7 +8,15 @@
 import UIKit
 
 class FavoriteController: UIViewController {
-    @IBOutlet private weak var titleLabel: UILabel!
+    @IBOutlet private weak var testButton: UIButton!
+    
+    @IBAction func testButtonAction(_ sender: Any) {
+        let vc = TestController()
+        present(vc, animated: true)
+        
+    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }

@@ -16,19 +16,18 @@ class HomeController: UIViewController {
     
     private var hideSearchField: Bool = true
     
-    private var showLoading: Bool = false {
-        didSet {
-            DispatchQueue.main.async {
-                self.showLoading ? self.indicatorView.startAnimating() : self.indicatorView.stopAnimating()
-            }
-            
-        }
-    }
+//    private var showLoading: Bool = false {
+//        didSet {
+//            DispatchQueue.main.async {
+//                self.showLoading ? self.indicatorView.startAnimating() : self.indicatorView.stopAnimating()
+//            }
+//        }
+//    }
     private let viewModel = HomeViewModel()
     override func viewDidLoad() {
         super.viewDidLoad()
         configureViewModel()
-        viewModel.getPopularMovieList()
+        viewModel.getMovieForType(type: .Today)
         setupView()
         
     }
@@ -71,7 +70,6 @@ class HomeController: UIViewController {
     }
     
     fileprivate func segmentAction(type: SegmentType) {
-        showLoading = true
         viewModel.getMovieForType(type: type)
         
         //burada type gore backende request atilacaq
@@ -80,13 +78,11 @@ class HomeController: UIViewController {
         
         viewModel.successCallback = { [weak self] in
             guard let self = self else {return}
-            self.showLoading = false
             self.reloadCollectionView()
         }
         
         viewModel.errorCallback = { [weak self] errorString in
             guard let self = self else {return}
-            self.showLoading = false
             print(errorString)
         }
     }
@@ -171,6 +167,6 @@ extension HomeController: UITextFieldDelegate {
     func textFieldDidChangeSelection(_ textField: UITextField) {
         guard let text = textField.text else {return}
         // burada bir search requesti atiriq
-        print(#function, text)
+        viewModel.getSearchList(text: text)
     }
 }

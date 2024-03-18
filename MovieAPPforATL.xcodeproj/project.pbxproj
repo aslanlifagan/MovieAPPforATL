@@ -9,10 +9,14 @@
 /* Begin PBXBuildFile section */
 		400DF15E2B9F585E00F69170 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 400DF1602B9F585E00F69170 /* Localizable.strings */; };
 		400DF1642B9F601A00F69170 /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 400DF1632B9F601A00F69170 /* SDWebImage */; };
+		401E7E162BA8A37C00C2DBE1 /* SearchManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 401E7E152BA8A37C00C2DBE1 /* SearchManager.swift */; };
+		401E7E1A2BA8A43900C2DBE1 /* SearchModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 401E7E192BA8A43900C2DBE1 /* SearchModel.swift */; };
 		401F07782B9E5005000500A0 /* UserDefaultsHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 401F07772B9E5005000500A0 /* UserDefaultsHelper.swift */; };
 		4047AF1C2BA1FDEC00B0DD3A /* TrendingHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4047AF1B2BA1FDEC00B0DD3A /* TrendingHelper.swift */; };
 		4047AF1E2BA1FDF500B0DD3A /* TrendingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4047AF1D2BA1FDF500B0DD3A /* TrendingManager.swift */; };
 		4047AF202BA1FEB400B0DD3A /* TrendingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4047AF1F2BA1FEB400B0DD3A /* TrendingModel.swift */; };
+		4047AF222BA2086B00B0DD3A /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4047AF212BA2086B00B0DD3A /* TestViewController.swift */; };
+		4047AF242BA20B0500B0DD3A /* Layout_Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4047AF232BA20B0500B0DD3A /* Layout_Extension.swift */; };
 		4055AA4C2B8CE33A00DB04D4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4055AA4B2B8CE33A00DB04D4 /* AppDelegate.swift */; };
 		4055AA4E2B8CE33A00DB04D4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4055AA4D2B8CE33A00DB04D4 /* SceneDelegate.swift */; };
 		4055AA552B8CE33D00DB04D4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4055AA542B8CE33D00DB04D4 /* Assets.xcassets */; };
@@ -61,10 +65,14 @@
 		400DF15B2B9F581500F69170 /* az */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = az; path = az.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		400DF15F2B9F585E00F69170 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		400DF1612B9F586200F69170 /* az */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = az; path = az.lproj/Localizable.strings; sourceTree = "<group>"; };
+		401E7E152BA8A37C00C2DBE1 /* SearchManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchManager.swift; sourceTree = "<group>"; };
+		401E7E192BA8A43900C2DBE1 /* SearchModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchModel.swift; sourceTree = "<group>"; };
 		401F07772B9E5005000500A0 /* UserDefaultsHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDefaultsHelper.swift; sourceTree = "<group>"; };
 		4047AF1B2BA1FDEC00B0DD3A /* TrendingHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendingHelper.swift; sourceTree = "<group>"; };
 		4047AF1D2BA1FDF500B0DD3A /* TrendingManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendingManager.swift; sourceTree = "<group>"; };
 		4047AF1F2BA1FEB400B0DD3A /* TrendingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendingModel.swift; sourceTree = "<group>"; };
+		4047AF212BA2086B00B0DD3A /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
+		4047AF232BA20B0500B0DD3A /* Layout_Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Layout_Extension.swift; sourceTree = "<group>"; };
 		4055AA482B8CE33A00DB04D4 /* MovieAPPforATL.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MovieAPPforATL.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4055AA4B2B8CE33A00DB04D4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4055AA4D2B8CE33A00DB04D4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -123,6 +131,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		401E7E142BA8A36B00C2DBE1 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				401E7E152BA8A37C00C2DBE1 /* SearchManager.swift */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
 		4047AF1A2BA1FD4800B0DD3A /* Trending */ = {
 			isa = PBXGroup;
 			children = (
@@ -170,6 +186,7 @@
 				4055AA872B8CF26800DB04D4 /* PopularMovieModel.swift */,
 				40C923582B98C521002CB5E9 /* TopRatedModel.swift */,
 				4047AF1F2BA1FEB400B0DD3A /* TrendingModel.swift */,
+				401E7E192BA8A43900C2DBE1 /* SearchModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -215,6 +232,7 @@
 			isa = PBXGroup;
 			children = (
 				4055AA6D2B8CE8D300DB04D4 /* FavoriteController.swift */,
+				4047AF212BA2086B00B0DD3A /* TestViewController.swift */,
 				4055AA6F2B8CE8E400DB04D4 /* FavoriteViewModel.swift */,
 			);
 			path = Favorite;
@@ -240,6 +258,7 @@
 		4055AA772B8CEB1F00DB04D4 /* NetworkLayer */ = {
 			isa = PBXGroup;
 			children = (
+				401E7E142BA8A36B00C2DBE1 /* Search */,
 				4047AF1A2BA1FD4800B0DD3A /* Trending */,
 				4055AA7B2B8CEB1F00DB04D4 /* Core */,
 				4055AA7E2B8CEB1F00DB04D4 /* Movie */,
@@ -290,6 +309,7 @@
 				405D39A02B8F95D000F3AE5D /* Extensions.swift */,
 				40A15FDE2B96141E007B812D /* KeychainHelper.swift */,
 				400DF1602B9F585E00F69170 /* Localizable.strings */,
+				4047AF232BA20B0500B0DD3A /* Layout_Extension.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -454,7 +474,11 @@
 				4047AF1C2BA1FDEC00B0DD3A /* TrendingHelper.swift in Sources */,
 				4055AA842B8CEB1F00DB04D4 /* NetworkManager.swift in Sources */,
 				4047AF1E2BA1FDF500B0DD3A /* TrendingManager.swift in Sources */,
+				4047AF242BA20B0500B0DD3A /* Layout_Extension.swift in Sources */,
 				4055AA6B2B8CE88700DB04D4 /* HomeController.swift in Sources */,
+				401E7E1A2BA8A43900C2DBE1 /* SearchModel.swift in Sources */,
+				401E7E162BA8A37C00C2DBE1 /* SearchManager.swift in Sources */,
+				4047AF222BA2086B00B0DD3A /* TestViewController.swift in Sources */,
 				4055AA832B8CEB1F00DB04D4 /* NetworkHelper.swift in Sources */,
 				4055AA4C2B8CE33A00DB04D4 /* AppDelegate.swift in Sources */,
 				40C923592B98C521002CB5E9 /* TopRatedModel.swift in Sources */,

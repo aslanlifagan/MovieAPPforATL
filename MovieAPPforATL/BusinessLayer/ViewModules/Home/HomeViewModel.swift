@@ -18,6 +18,7 @@ final class HomeViewModel {
     private var topRatedList: [TopRateResult]?
     private var todayModel: TrendingModel?
     private var weekModel: TrendingModel?
+    private var searchModel: SearchModel?
     private var movieList: [MovieCellProtocol] = []
     var successCallback: (() -> Void)?
     var errorCallback: ((String) -> Void)?
@@ -87,6 +88,7 @@ final class HomeViewModel {
             } else if let responseData = responseData {
                 self.todayModel = responseData
                 self.movieList = responseData.results ?? []
+                self.successCallback?()
             }
         }
 
@@ -100,6 +102,21 @@ final class HomeViewModel {
             } else if let responseData = responseData {
                 self.weekModel = responseData
                 self.movieList = responseData.results ?? []
+                self.successCallback?()
+            }
+        }
+
+    }
+    
+    func getSearchList(text: String) {
+        SearchManager.shared.getSearchList(query: text) { [weak self] responseData, errorString in
+            guard let self = self else {return}
+            if let errorString = errorString {
+                self.errorCallback?(errorString)
+            } else if let responseData = responseData {
+                self.searchModel = responseData
+                self.movieList = responseData.results ?? []
+                self.successCallback?()
             }
         }
 
