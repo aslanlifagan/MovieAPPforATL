@@ -23,7 +23,7 @@ final class HomeViewModel {
     var successCallback: (() -> Void)?
     var errorCallback: ((String) -> Void)?
 //    weak var delegate: HomeProtocol?
-    
+    var selectedMovie: MovieCellProtocol?
     func getMovieForType(type: SegmentType) {
         switch type {
         case .TopRated:

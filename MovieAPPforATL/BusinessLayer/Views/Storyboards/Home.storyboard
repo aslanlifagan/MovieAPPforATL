@@ -112,6 +112,38 @@
             </objects>
             <point key="canvasLocation" x="-4715.2671755725187" y="-32.394366197183103"/>
         </scene>
+        <!--Movie Detail Controller-->
+        <scene sceneID="V2L-y0-no9">
+            <objects>
+                <viewController storyboardIdentifier="MovieDetailController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="chE-PJ-NKs" customClass="MovieDetailController" customModule="MovieAPPforATL" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="CQU-44-CBg">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G85-Ti-PHp">
+                                <rect key="frame" x="137.66666666666666" y="408.66666666666669" width="118" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Show Trailer"/>
+                                <connections>
+                                    <action selector="trailerButtonAction:" destination="chE-PJ-NKs" eventType="touchUpInside" id="be0-BN-kRZ"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="FwW-IE-7Xv"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="G85-Ti-PHp" firstAttribute="centerX" secondItem="CQU-44-CBg" secondAttribute="centerX" id="Wqb-Up-bWr"/>
+                            <constraint firstItem="G85-Ti-PHp" firstAttribute="centerY" secondItem="CQU-44-CBg" secondAttribute="centerY" id="hOt-nX-TbJ"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="trailerButton" destination="G85-Ti-PHp" id="Ssq-pk-PQY"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ask-cl-TXU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-4781" y="689"/>
+        </scene>
         <!--Favorite-->
         <scene sceneID="lXa-cC-wxM">
             <objects>
@@ -210,6 +242,40 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fnd-ct-vlJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-3348" y="-940"/>
+        </scene>
+        <!--Web View Controller-->
+        <scene sceneID="Cu8-Zc-rcl">
+            <objects>
+                <viewController storyboardIdentifier="WebViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="s1D-Th-Xvb" customClass="WebViewController" customModule="MovieAPPforATL" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="atZ-Cy-QaF">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aT9-W9-Uez">
+                                <rect key="frame" x="0.0" y="59" width="393" height="759"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="5ev-RX-eZT"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="5ev-RX-eZT" firstAttribute="trailing" secondItem="aT9-W9-Uez" secondAttribute="trailing" id="1Dd-V0-QVH"/>
+                            <constraint firstItem="5ev-RX-eZT" firstAttribute="bottom" secondItem="aT9-W9-Uez" secondAttribute="bottom" id="AFm-wg-UVd"/>
+                            <constraint firstItem="aT9-W9-Uez" firstAttribute="top" secondItem="5ev-RX-eZT" secondAttribute="top" id="Gav-4J-6ym"/>
+                            <constraint firstItem="aT9-W9-Uez" firstAttribute="leading" secondItem="5ev-RX-eZT" secondAttribute="leading" id="jpV-1x-xUz"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="webView" destination="aT9-W9-Uez" id="kB7-Ad-yjt"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uOo-Si-1y5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-3758" y="689"/>
         </scene>
     </scenes>
     <resources>

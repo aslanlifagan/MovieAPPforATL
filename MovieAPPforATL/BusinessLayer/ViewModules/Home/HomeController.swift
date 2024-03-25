@@ -92,6 +92,12 @@ class HomeController: UIViewController {
             self.collectionView.reloadData()
         }
     }
+    
+    fileprivate func showMovieDetailController() {
+        let vc = UIStoryboard.init(name: "Home", bundle: Bundle.main).instantiateViewController(withIdentifier: "MovieDetailController") as? MovieDetailController ?? MovieDetailController()
+        vc.viewModel = viewModel
+        navigationController?.pushViewController(vc, animated: true)
+    }
     @objc func sortClicked() {
         print(#function)
     }
@@ -161,6 +167,11 @@ extension HomeController: UICollectionViewDataSource,
         sizeForItemAt indexPath: IndexPath) -> CGSize {
             return CGSize(width:collectionView.frame.width/3, height: collectionView.frame.height * 0.4)
         }
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let movie = viewModel.getMovieList()[indexPath.row]
+        viewModel.selectedMovie = movie
+        showMovieDetailController()
+    }
 }
 
 extension HomeController: UITextFieldDelegate {
