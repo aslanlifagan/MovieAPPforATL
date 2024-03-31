@@ -10,7 +10,7 @@ import Foundation
 
 class TrendingManager {
     static let shared = TrendingManager()
-    
+    private init() {}
     func getWeekMovieList(pageID: Int, complete: @escaping((TrendingModel?, String?) -> Void)) {
         let url = "\(TrendingHelper.week.path)\(pageID)"
         NetworkManager.shared.request(
