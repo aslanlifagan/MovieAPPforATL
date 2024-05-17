@@ -14,7 +14,7 @@ class PeopleViewModel {
     var error: ((String) -> Void)?
     
     func getPeopleList() {
-        PeopleManager.shared.getPeopleListt(pageID:1) { [weak self] responseData, errorString in
+        PeopleManager.shared.getPeopleList(pageID:1) { [weak self] responseData, errorString in
             guard let self = self else {return}
             if let errorString = errorString {
                 self.error?(errorString)

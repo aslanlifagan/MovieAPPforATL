@@ -10,7 +10,7 @@ import Foundation
 class PeopleManager {
     static let shared = PeopleManager()
     
-    func getPeopleListt(pageID: Int, complete: @escaping((PeopleModel?, String?) -> Void)) {
+    func getPeopleList(pageID: Int, complete: @escaping((PeopleModel?, String?) -> Void)) {
         let url = "\(PeopleHelper.popular.path)\(pageID)"
         NetworkManager.shared.request(
             type: PeopleModel.self,
