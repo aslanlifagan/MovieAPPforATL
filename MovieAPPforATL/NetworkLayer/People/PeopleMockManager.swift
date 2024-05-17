@@ -10,8 +10,8 @@ import Foundation
 class PeopleMockManager {
     static let shared = PeopleMockManager()
     
-    func getPeopleList(complete: @escaping((PeopleModel?, String?) -> Void)) {
+    func getPeopleList() -> (PeopleModel?, String?) {
         let result = MockManager.parseMockFile(model: PeopleModel.self, path: "peopleMock")
-        complete(result.0, result.1)
+        return (result.0, result.1)
     }
 }

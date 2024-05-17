@@ -27,14 +27,13 @@ class PeopleViewModel {
     }
     
     func getMockPeopleList() {
-        mockManager.getPeopleList { [weak self] responseData, errorString in
-            guard let self = self else {return}
-            if let error = errorString {
-                self.error?(error)
-            } else if let response = responseData {
-                self.peopleData = response
-                self.success?()
-            }
+        let result = mockManager.getPeopleList()
+        
+        if let error = result.1 {
+            self.error?(error)
+        } else if let response = result.0 {
+            self.peopleData = response
+            self.success?()
         }
     }
     
