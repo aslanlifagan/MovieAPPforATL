@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -221,6 +222,48 @@
             </objects>
             <point key="canvasLocation" x="-2036" y="-32"/>
         </scene>
+        <!--People-->
+        <scene sceneID="KqG-1c-VDy">
+            <objects>
+                <viewController storyboardIdentifier="PeopleController" id="Qgj-cm-okf" customClass="PeopleController" customModule="MovieAPPforATL" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="2mb-v2-8xU">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="fld-0r-dOO">
+                                <rect key="frame" x="0.0" y="59" width="393" height="710"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="Afb-Nz-cFw">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells/>
+                                <connections>
+                                    <outlet property="dataSource" destination="Qgj-cm-okf" id="gmY-nR-d90"/>
+                                    <outlet property="delegate" destination="Qgj-cm-okf" id="nIx-7o-aVT"/>
+                                </connections>
+                            </collectionView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Wjw-gZ-xBJ"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="fld-0r-dOO" firstAttribute="top" secondItem="Wjw-gZ-xBJ" secondAttribute="top" id="TWz-Nt-lVi"/>
+                            <constraint firstItem="fld-0r-dOO" firstAttribute="leading" secondItem="Wjw-gZ-xBJ" secondAttribute="leading" id="dQt-9I-rra"/>
+                            <constraint firstItem="Wjw-gZ-xBJ" firstAttribute="trailing" secondItem="fld-0r-dOO" secondAttribute="trailing" id="kqp-9A-LZX"/>
+                            <constraint firstItem="Wjw-gZ-xBJ" firstAttribute="bottom" secondItem="fld-0r-dOO" secondAttribute="bottom" id="xpz-Db-YNX"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="People" image="person" catalog="system" id="HIH-Wc-Tjl"/>
+                    <connections>
+                        <outlet property="collection" destination="fld-0r-dOO" id="SP9-lJ-EMD"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="EQA-6l-xGU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-824" y="-32"/>
+        </scene>
         <!--Tabbar Controller-->
         <scene sceneID="ASQ-FJ-DrD">
             <objects>
@@ -236,7 +279,8 @@
                     <connections>
                         <segue destination="BRs-LR-8gi" kind="relationship" relationship="viewControllers" id="YQh-U2-dZo"/>
                         <segue destination="ohl-wC-BJc" kind="relationship" relationship="viewControllers" id="Ckh-ny-ymv"/>
-                        <segue destination="mBV-CQ-Vic" kind="relationship" relationship="viewControllers" id="YCQ-DX-KZS"/>
+                        <segue destination="Qgj-cm-okf" kind="relationship" relationship="viewControllers" id="L3I-Zj-cB6"/>
+                        <segue destination="mBV-CQ-Vic" kind="relationship" relationship="viewControllers" id="ohQ-xL-DO5"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fnd-ct-vlJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -283,21 +327,22 @@
         <image name="folder" catalog="system" width="128" height="96"/>
         <image name="homekit" catalog="system" width="128" height="104"/>
         <image name="magnifyingglass" catalog="system" width="128" height="117"/>
+        <image name="person" catalog="system" width="128" height="121"/>
         <image name="star" catalog="system" width="128" height="116"/>
         <systemColor name="secondaryLabelColor">
-            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemPinkColor">
-            <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemYellowColor">
             <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="tintColor">
-            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

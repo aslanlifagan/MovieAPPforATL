@@ -82,7 +82,7 @@ class HomeController: UIViewController {
         }
         
         viewModel.errorCallback = { [weak self] errorString in
-            guard let self = self else {return}
+            guard let _ = self else {return}
             print(errorString)
         }
     }

@@ -81,9 +81,7 @@ final class HomeViewModel {
     }
     
     fileprivate func getTodayMovieList() {
-        let manager = TrendingManager()
-        let test = TrendingManager()
-        
+    
         TrendingManager.shared.getTodayMovieList(pageID: 1) { [weak self] responseData, errorString in
             guard let self = self else {return}
             if let errorString = errorString {
