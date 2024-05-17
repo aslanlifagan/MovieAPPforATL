@@ -68,6 +68,7 @@
 		821267EF2BF7389D00EF4AB0 /* PeopleHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 821267EE2BF7389D00EF4AB0 /* PeopleHelper.swift */; };
 		821267F22BF73A3F00EF4AB0 /* PeopleController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 821267F12BF73A3F00EF4AB0 /* PeopleController.swift */; };
 		821267F42BF73A4800EF4AB0 /* PeopleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 821267F32BF73A4800EF4AB0 /* PeopleViewModel.swift */; };
+		821267FD2BF7467900EF4AB0 /* MockManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 821267FC2BF7467900EF4AB0 /* MockManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -135,6 +136,7 @@
 		821267EE2BF7389D00EF4AB0 /* PeopleHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleHelper.swift; sourceTree = "<group>"; };
 		821267F12BF73A3F00EF4AB0 /* PeopleController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleController.swift; sourceTree = "<group>"; };
 		821267F32BF73A4800EF4AB0 /* PeopleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleViewModel.swift; sourceTree = "<group>"; };
+		821267FC2BF7467900EF4AB0 /* MockManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -294,6 +296,7 @@
 			children = (
 				4055AA7C2B8CEB1F00DB04D4 /* NetworkHelper.swift */,
 				4055AA7D2B8CEB1F00DB04D4 /* NetworkManager.swift */,
+				821267FC2BF7467900EF4AB0 /* MockManager.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -526,6 +529,7 @@
 				40A15FDF2B96141E007B812D /* KeychainHelper.swift in Sources */,
 				4047AF1C2BA1FDEC00B0DD3A /* TrendingHelper.swift in Sources */,
 				4055AA842B8CEB1F00DB04D4 /* NetworkManager.swift in Sources */,
+				821267FD2BF7467900EF4AB0 /* MockManager.swift in Sources */,
 				4047AF1E2BA1FDF500B0DD3A /* TrendingManager.swift in Sources */,
 				4047AF242BA20B0500B0DD3A /* Layout_Extension.swift in Sources */,
 				4055AA6B2B8CE88700DB04D4 /* HomeController.swift in Sources */,
