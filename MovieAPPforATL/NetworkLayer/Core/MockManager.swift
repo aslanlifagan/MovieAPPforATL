@@ -8,8 +8,10 @@
 import Foundation
 
 class MockManager {
-    static func parseMockFile<T: Codable>(model: T.Type,
-                                   path: String) -> (T?, String?) {
+    
+    static func parseMockFile<T: Codable>(
+        model: T.Type,
+        path: String) -> (T?, String?) {
         guard let path = Bundle.main.url(forResource: path, withExtension: "json") else { return (nil, nil) }
         guard let data = try? Data(contentsOf: path) else { return (nil, nil) }
         do {

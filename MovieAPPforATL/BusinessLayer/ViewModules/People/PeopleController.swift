@@ -19,7 +19,7 @@ class PeopleController: UIViewController {
 
         configureUI()
         configureViewModel()
-        viewModel.getPeopleList()
+        viewModel.getMockPeopleList()
     }
     
     func configureUI() {

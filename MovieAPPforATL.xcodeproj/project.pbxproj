@@ -69,6 +69,8 @@
 		821267F22BF73A3F00EF4AB0 /* PeopleController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 821267F12BF73A3F00EF4AB0 /* PeopleController.swift */; };
 		821267F42BF73A4800EF4AB0 /* PeopleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 821267F32BF73A4800EF4AB0 /* PeopleViewModel.swift */; };
 		821267FD2BF7467900EF4AB0 /* MockManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 821267FC2BF7467900EF4AB0 /* MockManager.swift */; };
+		825205602BF7AD5300C4FF92 /* peopleMock.json in Resources */ = {isa = PBXBuildFile; fileRef = 8252055F2BF7AD5300C4FF92 /* peopleMock.json */; };
+		825205642BF7B29F00C4FF92 /* PeopleMockManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 825205632BF7B29F00C4FF92 /* PeopleMockManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -137,6 +139,8 @@
 		821267F12BF73A3F00EF4AB0 /* PeopleController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleController.swift; sourceTree = "<group>"; };
 		821267F32BF73A4800EF4AB0 /* PeopleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleViewModel.swift; sourceTree = "<group>"; };
 		821267FC2BF7467900EF4AB0 /* MockManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockManager.swift; sourceTree = "<group>"; };
+		8252055F2BF7AD5300C4FF92 /* peopleMock.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = peopleMock.json; sourceTree = "<group>"; };
+		825205632BF7B29F00C4FF92 /* PeopleMockManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleMockManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -405,8 +409,10 @@
 		821267EB2BF7386E00EF4AB0 /* People */ = {
 			isa = PBXGroup;
 			children = (
-				821267EC2BF7389000EF4AB0 /* PeopleManager.swift */,
 				821267EE2BF7389D00EF4AB0 /* PeopleHelper.swift */,
+				821267EC2BF7389000EF4AB0 /* PeopleManager.swift */,
+				825205632BF7B29F00C4FF92 /* PeopleMockManager.swift */,
+				8252055F2BF7AD5300C4FF92 /* peopleMock.json */,
 			);
 			path = People;
 			sourceTree = "<group>";
@@ -496,6 +502,7 @@
 				4055AA622B8CE4E200DB04D4 /* Home.storyboard in Resources */,
 				400DF15E2B9F585E00F69170 /* Localizable.strings in Resources */,
 				40C9234F2B98BF68002CB5E9 /* Montserrat-ExtraLightItalic.ttf in Resources */,
+				825205602BF7AD5300C4FF92 /* peopleMock.json in Resources */,
 				40C923522B98BF68002CB5E9 /* Montserrat-ThinItalic.ttf in Resources */,
 				40C923512B98BF68002CB5E9 /* Montserrat-Thin.ttf in Resources */,
 				40C923562B98BF68002CB5E9 /* Montserrat-ExtraBold.ttf in Resources */,
@@ -538,6 +545,7 @@
 				401E7E162BA8A37C00C2DBE1 /* SearchManager.swift in Sources */,
 				821267ED2BF7389000EF4AB0 /* PeopleManager.swift in Sources */,
 				4047AF222BA2086B00B0DD3A /* TestViewController.swift in Sources */,
+				825205642BF7B29F00C4FF92 /* PeopleMockManager.swift in Sources */,
 				4055AA832B8CEB1F00DB04D4 /* NetworkHelper.swift in Sources */,
 				821267F42BF73A4800EF4AB0 /* PeopleViewModel.swift in Sources */,
 				4055AA4C2B8CE33A00DB04D4 /* AppDelegate.swift in Sources */,
